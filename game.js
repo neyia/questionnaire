@@ -46,6 +46,7 @@ startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    scoreText.innerText = 0;
 };
 
 getNewQuestion = () => {
@@ -76,13 +77,15 @@ choices.forEach(choice => {
         }
         acceptingAnswers = false;
         const selectedChoice = element.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        const selectedAnswer = parseInt(selectedChoice.dataset['number']);
+        let classToApply = selectedAnswer === currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
         }
+
         selectedChoice.parentElement.classList.add(classToApply);
+
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
@@ -90,7 +93,7 @@ choices.forEach(choice => {
     });
 });
 
-incrementScore = (num) => {
+incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
