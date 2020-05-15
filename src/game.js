@@ -12,32 +12,20 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question: 'Inside which HTML element do we put the Javascript ??',
-        choice1: '<script>',
-        choice2: '<javascript>',
-        choice3: '<js>',
-        choice4: '<scripting>',
-        answer: 1
-    },
-    {
-        question: 'What is the correct syntax for referring to an external script called "xxx.js" ?',
-        choice1: '<script href="xxx.js">',
-        choice2: '<script name="xxx.js">',
-        choice3: '<script src="xxx.js">',
-        choice4: '<script file="xxx.js">',
-        answer: 3
-    },
-    {
-        question: 'How do you write "Hello world" in an alert box ?',
-        choice1: 'msgBox("Hello world")',
-        choice2: 'alertBox("Hello world")',
-        choice3: 'msg("Hello world")',
-        choice4: 'alert("Hello world")',
-        answer: 4
-    },
-];
+let questions = [];
+
+fetch('./questions.json')
+    .then(res => {
+        return res.json();
+    })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions);
+        questions = loadedQuestions;
+        startGame();
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 //constants
 const CORRECT_BONUS = 10;
@@ -55,7 +43,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('./end.html');
+        return window.location.assign('end.html');
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -103,4 +91,3 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-startGame();
