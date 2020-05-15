@@ -22,6 +22,9 @@ fetch('./questions.json')
         console.log(loadedQuestions);
         questions = loadedQuestions;
         startGame();
+    })
+    .catch(err => {
+        console.log(err);
     });
 
 //constants
