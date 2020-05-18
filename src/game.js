@@ -38,7 +38,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=mu
         startGame();
     })
     .catch(err => {
-        //console.log(err);
+        console.log(err);
     });
 
 //constants
