@@ -34,8 +34,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=mu
 
             return formattedQuestion;
         });
-        game.classList.remove('hidden');
-        loader.classList.add('hidden');
+
         startGame();
     })
     .catch(err => {
@@ -52,6 +51,9 @@ startGame = () => {
     availableQuestions = [...questions];
     getNewQuestion();
     scoreText.innerText = 0;
+
+    game.classList.remove('hidden');
+    loader.classList.add('hidden');
 };
 
 getNewQuestion = () => {
