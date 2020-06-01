@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Game Questionnaire</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <section id="game" class="justify-center flex-column hidden">
+            <div class="status">
+                <div class="status-bar">
+                    <p id="statusText" class="status-bar__text">
+                        Question
+                    </p>
+                    <div id="progressBar" class="progress-bar">
+                        <div id="progressBarFull" class="progress-bar__full"></div>
+                    </div>
+                </div>
+                <div class="status-bar">
+                    <p class="status-bar__text">
+                        Score
+                    </p>
+                    <h1 id="score" class="status-bar__score">&nbsp;</h1>
+                </div>
+            </div>
+            <h2 id="question">&nbsp;</h2>
+
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <a href="#" class="choice-text" data-number="1"></a>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <a href="#" class="choice-text" data-number="2"></a>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <a href="#" class="choice-text" data-number="3"></a>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <a href="#" class="choice-text" data-number="4"></a>
+            </div>
+
+        </section>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
