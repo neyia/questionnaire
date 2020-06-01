@@ -165,6 +165,7 @@ input::placeholder {
 }
 
 .choice-text {
+    text-decoration: none;
     padding: 1.5rem;
     width:   100%;
 }
@@ -177,36 +178,36 @@ input::placeholder {
     background-color: #dc3545;
 }
 
-/* hud */
+/* status bar */
 
-#hud {
+.status {
     display:         flex;
     justify-content: space-between;
 }
 
-.hud-prefix {
+.status-bar__text {
     text-align: center;
     font-size:  2rem;
 }
 
-.hub-main-text {
+.status-bar__score {
     text-align: center;
 }
 
-#progressBar {
+.progress-bar {
     border:     0.3rem solid #56a5eb;
     margin-top: 1.5rem;
     width:      20rem;
     height:     4rem;
 }
 
-#progressBarFull {
+.progress-bar__full {
     background-color: #56a5eb;
     height:           3.4rem;
     width:            0;
 }
 
-#loader {
+.loader {
     animation:             spin 2s linear infinite;
     border:                1.6rem solid #ffffff;
     border-top:            1.6rem solid #56a5eb;

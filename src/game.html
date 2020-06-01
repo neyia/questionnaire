@@ -9,43 +9,44 @@
 </head>
 <body>
     <div class="container">
-        <div id="loader"></div>
-        <div id="game" class="justify-center flex-column hidden">
-            <div id="hud">
-                <div id="hud-item">
-                    <p id="progressText" class="hud-prefix">
+        <div class="loader"></div>
+        <section id="game" class="justify-center flex-column hidden">
+            <div class="status">
+                <div class="status-bar">
+                    <p id="statusText" class="status-bar__text">
                         Question
                     </p>
-                    <!--<h1 id="questionCounter" class="hub-main-text"></h1>-->
-                    <div id="progressBar">
-                        <div id="progressBarFull"></div>
+                    <div id="progressBar" class="progress-bar">
+                        <div id="progressBarFull" class="progress-bar__full"></div>
                     </div>
                 </div>
-                <div id="hud-item">
-                    <p class="hud-prefix">
+                <div class="status-bar">
+                    <p class="status-bar__text">
                         Score
                     </p>
-                    <h1 id="score" class="hub-main-text"></h1>
+                    <h1 id="score" class="status-bar__score">&nbsp;</h1>
                 </div>
             </div>
-            <h2 id="question"></h2>
+            <h2 id="question">&nbsp;</h2>
+
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
-                <p class="choice-text" data-number="1"></p>
+                <a href="#" class="choice-text" data-number="1"></a>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">B</p>
-                <p class="choice-text" data-number="2"></p>
+                <a href="#" class="choice-text" data-number="2"></a>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">C</p>
-                <p class="choice-text" data-number="3"></p>
+                <a href="#" class="choice-text" data-number="3"></a>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">D</p>
-                <p class="choice-text" data-number="4"></p>
+                <a href="#" class="choice-text" data-number="4"></a>
             </div>
-        </div>
+
+        </section>
     </div>
     <script src="game.js"></script>
 </body>

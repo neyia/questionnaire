@@ -1,9 +1,9 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
-const progressText = document.getElementById('progressText');
+const progressText = document.getElementById('statusText');
 const progressBarFull = document.getElementById('progressBarFull');
 const scoreText = document.getElementById('score');
-const loader = document.getElementById('loader');
+const loader = document.querySelector('.loader');
 const game = document.getElementById('game');
 
 let currentQuestion = {};
@@ -45,6 +45,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=mu
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 
+
 startGame = () => {
     questionCounter = 0;
     score = 0;
@@ -82,6 +83,8 @@ getNewQuestion = () => {
 
 choices.forEach(choice => {
     choice.addEventListener('click', element => {
+        element.preventDefault();
+
         if (!acceptingAnswers) {
             return;
         }
